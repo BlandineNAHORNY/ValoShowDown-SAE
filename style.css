@@ -1,0 +1,148 @@
+/*
+Theme Name: Valoshowdown Thème
+Theme URI: https://blandinenahorny.com/mesthemes
+Author: Blandine Nahorny
+Author URI: https://blandinenahorny.com
+Description: Le thème développé pour la SAé 301
+Version: 1.0
+*/
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.header {
+    background-color: #000; /* Couleur de fond du header */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Ajustez la hauteur du logo */
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white; /* Couleur du hamburger */
+    font-size: 24px;
+    cursor: pointer;
+    display: block; /* Toujours afficher le bouton hamburger */
+}
+
+.main-navigation {
+    display: none; /* Cacher le menu par défaut */
+}
+
+.main-navigation.active {
+    display: block; /* Afficher le menu quand il est actif */
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    padding: 10px 0;
+    text-align: center; /* Centrer le texte pour mobile */
+}
+
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Styles pour le menu hamburger en responsive */
+@media (max-width: 768px) {
+    .main-navigation {
+        background-color: #333; /* Couleur de fond du menu déroulant */
+        position: absolute;
+        top: 60px; /* Ajustez selon la hauteur de votre header */
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none; /* Masquer le bouton hamburger sur les écrans larges */
+    }
+
+    .main-navigation {
+        display: flex; /* Afficher le menu en ligne pour les écrans larges */
+        justify-content: flex-end; /* Alignement à droite */
+        width: auto; /* Ajuster la largeur du menu */
+    }
+
+    .nav-menu {
+        display: flex; /* Afficher les éléments du menu en ligne */
+        gap: 20px; /* Espacement entre les éléments */
+    }
+
+    .nav-menu li {
+        padding: 0; /* Réduire le padding pour les écrans larges */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.team-archive, .team-page {
+    background-color: #1a1a1a; /* Fond sombre pour la page */
+    color: #ffffff; /* Couleur du texte */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.team-archive h1, .team-page h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.team-archive ul {
+    list-style: none;
+    padding: 0;
+}
+
+.team-archive li {
+    padding: 10px 0;
+}
+
+.team-archive li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.team-info h2, .team-info h3, .team-info h4 {
+    margin: 10px 0;
+}
+
+.team-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.team-info li {
+    padding: 5px 0;
+}
+
