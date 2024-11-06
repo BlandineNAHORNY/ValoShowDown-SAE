@@ -21,8 +21,6 @@ get_header(); ?>
                 $equipe1 = get_field('equipe1result'); // Récupérer le nom de l'équipe 1
                 $equipe2 = get_field('equipe2result'); // Récupérer le nom de l'équipe 2
                 $score = get_field('resultat'); // Récupérer le score
-                $date_match = get_field('date_du_resultat'); // Récupérer la date du match
-                $horaire_match = get_field('horaire_du_resultat'); // Récupérer l'heure du match
                 $youtube_rediff = get_field('youtube_rediff'); // URL de rediffusion YouTube
                 $twitch_rediff = get_field('twitch_rediff'); // URL de rediffusion Twitch
 
@@ -34,9 +32,7 @@ get_header(); ?>
                     <div class="result-card">
                         <h3><?php the_title(); ?></h3>
                         <p><?php echo esc_html($equipe1_name) . ' vs ' . esc_html($equipe2_name); ?></p>
-                        <p>Score : <?php echo esc_html($score); ?></p>
-                        <p>Date : <?php echo esc_html(date('d/m/Y', strtotime($date_match))); ?></p> <!-- Formatage de la date -->
-                        <p>Heure : <?php echo esc_html(date('H:i', strtotime($horaire_match))); ?></p> <!-- Formatage de l'heure -->
+                        <p class="score">Score : <?php echo esc_html($score); ?></p> <!-- Classe ajoutée pour le score -->
 
                         <!-- Boutons de rediffusion -->
                         <div class="rediff-links">

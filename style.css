@@ -1254,9 +1254,11 @@ input[type="submit"]:hover {
 }
 
 .result-card .score {
-    font-size: 2rem; /* Taille du score */
-    color: #FF4655; /* Couleur pour le score */
+    font-size: 2.5rem; /* Taille du score augmentée */
+    color: #FF4655; /* Couleur rouge pour le score */
+    font-weight: bold; /* Texte en gras */
     margin: 10px 0; /* Marge autour du score */
+    text-align: center; /* Centrer le score */
 }
 
 .rediff-links {
@@ -1282,6 +1284,7 @@ input[type="submit"]:hover {
 ul li {
     text-decoration: none; /* Pas de soulignement */
 }
+
 
 
 
