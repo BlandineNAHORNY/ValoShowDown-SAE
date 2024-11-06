@@ -159,7 +159,7 @@ body {
 /* Styles pour le bouton de fermeture */
 .close-btn {
     position: absolute; /* Position absolue pour placer le bouton */
-    top: -205px; /* Espace du haut - ajusté à 10px pour le rapprocher du haut */
+    top: -100px; /* Espace du haut - ajusté à 10px pour le rapprocher du haut */
     right: -90px; /* Espace de la droite */
     font-size: 60px; /* Taille du bouton de fermeture */
     color: #FFFFFF; /* Couleur du texte */
@@ -1042,6 +1042,60 @@ p, .button {
     margin-top: 5px; /* Espace au-dessus de la date de création */
     font-size: 16px; /* Taille de la date */
 }
+.settings-page {
+    padding: 20px;
+    background-color: #0F1923; /* Couleur de fond similaire */
+    color: #fff; /* Couleur du texte en blanc pour la lisibilité */
+}
+
+h1, h2 {
+    color: #FF4655; /* Couleur des titres en accord avec le thème */
+}
+
+.profile-header {
+    display: flex;
+    align-items: center; /* Centrer verticalement */
+    margin-bottom: 20px; /* Espacement sous la section du profil */
+}
+
+.profile-picture {
+    margin-right: 20px; /* Espacement à droite de l'image de profil */
+}
+
+.profile-picture img {
+    width: 100px; /* Largeur de l'image de profil */
+    height: auto; /* Hauteur automatique pour garder le ratio */
+    border-radius: 50%; /* Rendre l'image ronde */
+}
+
+form {
+    margin-bottom: 20px; /* Espacement entre les formulaires */
+}
+
+label {
+    display: block; /* Affichage en bloc pour les labels */
+    margin-bottom: 5px; /* Espacement sous le label */
+    color: #fff; /* Couleur des labels en blanc */
+}
+
+input[type="file"], input[type="password"], input[type="submit"] {
+    padding: 10px; /* Espacement intérieur */
+    margin-bottom: 15px; /* Espacement sous les champs */
+    width: 100%; /* Largeur pleine */
+    border: none; /* Pas de bordure par défaut */
+    border-radius: 5px; /* Coins arrondis */
+}
+
+input[type="submit"] {
+    background-color: #FF4655; /* Couleur du bouton */
+    color: #fff; /* Couleur du texte */
+    cursor: pointer; /* Curseur de main sur hover */
+    transition: background-color 0.3s; /* Effet de transition */
+}
+
+input[type="submit"]:hover {
+    background-color: #e03a4c; /* Couleur au survol */
+}
 
 
 
@@ -1151,4 +1205,80 @@ p, .button {
 .vs {
     margin: 0 10px; /* Espacement autour du "vs" */
     font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* resultat match */
+.results-archive {
+    background-color: #0F1923; /* Couleur de fond sombre */
+    color: #fff; /* Couleur du texte */
+    padding: 20px; /* Espacement intérieur */
+    border-radius: 8px; /* Coins arrondis */
+}
+
+.results-archive h1 {
+    font-family: 'Orbitron', sans-serif; /* Utiliser la police Orbitron pour le titre */
+    font-size: 2rem; /* Taille du titre */
+    margin-bottom: 20px; /* Espacement en bas du titre */
+}
+
+.result-card {
+    background-color: #1a1f23; /* Couleur de fond des cartes de résultats */
+    padding: 15px; /* Espacement intérieur de la carte */
+    border-radius: 8px; /* Coins arrondis */
+    margin-bottom: 20px; /* Espacement en bas de chaque carte */
+    text-align: center; /* Centrer le contenu */
+}
+
+.result-card h3 {
+    font-family: 'Orbitron', sans-serif; /* Utiliser la police Orbitron pour le nom du match */
+    font-size: 1.5rem; /* Taille de la police */
+    color: #FF4655; /* Couleur du texte */
+    margin: 10px 0; /* Marge autour du nom */
+}
+
+.result-card p {
+    font-family: 'Montserrat', sans-serif; /* Utiliser la police Montserrat pour le texte */
+    font-size: 1.2rem; /* Taille de la police */
+    margin: 5px 0; /* Marge autour du texte */
+}
+
+.result-card .score {
+    font-size: 2rem; /* Taille du score */
+    color: #FF4655; /* Couleur pour le score */
+    margin: 10px 0; /* Marge autour du score */
+}
+
+.rediff-links {
+    margin-top: 15px; /* Espacement au-dessus des boutons de rediffusion */
+}
+
+.rediff-links .button {
+    display: inline-block;
+    padding: 10px 20px; /* Espacement intérieur */
+    background-color: #FF4655; /* Couleur du bouton */
+    color: white; /* Couleur du texte */
+    text-decoration: none; /* Pas de soulignement */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s; /* Transition au survol */
+    margin-right: 10px; /* Espacement entre les boutons */
+}
+
+.rediff-links .button:hover {
+    background-color: #e03a4c; /* Couleur au survol */
+}
+
+/* Enlever la décoration de texte des éléments de liste */
+ul li {
+    text-decoration: none; /* Pas de soulignement */
 }

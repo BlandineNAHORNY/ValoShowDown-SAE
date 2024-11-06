@@ -13,8 +13,8 @@ get_header(); ?>
         $args = array(
             'post_type' => 'team', // Assurez-vous que 'team' correspond à votre type de publication personnalisé
             'posts_per_page' => -1, // Récupérer tous les articles
-            'orderby' => 'title', // Ordre par titre
-            'order' => 'ASC' // Ordre croissant
+            'orderby' => 'date', // Ordre par date
+            'order' => 'ASC' // Ordre croissant pour afficher les plus anciennes en premier
         );
         $teams = new WP_Query($args);
 

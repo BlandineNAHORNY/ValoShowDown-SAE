@@ -2,6 +2,9 @@
 /* Template Name: Connexion */
 get_header();
 
+// Démarrer la mise en tampon de sortie
+ob_start();
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
     // Récupérer et sanitiser les données du formulaire
     $email = sanitize_email($_POST['email']);
@@ -16,12 +19,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
     );
 
     $user = wp_signon($creds, false);
-    
+
     if (is_wp_error($user)) {
         echo '<p style="color:red;">Erreur : ' . $user->get_error_message() . '</p>';
     } else {
-        // Rediriger vers la page d'accueil ou une autre page
-        wp_redirect(home_url());
+        // Rediriger vers la page de profil ou d'accueil
+        wp_redirect(home_url('/profil')); // Changez cela pour rediriger vers la page désirée
         exit;
     }
 }
@@ -43,3 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 </div>
 
 <?php get_footer(); ?>
+
+<?php
+// Terminer la mise en tampon de sortie et l'envoyer
+ob_end_flush();
+?>
