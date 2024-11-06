@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Orbitron:wght@400;600&family=Inter:wght@400&display=swap" rel="stylesheet">
     <title><?php bloginfo('name'); ?></title>
+    <link rel="stylesheet" href="style.php">
     <?php wp_head(); ?>
 </head>
 

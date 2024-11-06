@@ -1,4 +1,4 @@
-<?php 
+<?php  
 /**
  * Template Name: Archive Teams
  */
@@ -21,15 +21,10 @@ get_header(); ?>
         if ($teams->have_posts()) :
             while ($teams->have_posts()) : $teams->the_post();
                 $logo_equipe_id = get_field('logo_equipe'); // Récupérer l'ID du logo de l'équipe
-                $chef_equipe_id = get_field('chef_equipe'); // Récupérer l'ID du chef d'équipe
-                $chef_equipe_name = get_the_title($chef_equipe_id); // Récupérer le nom du chef d'équipe
-                $rang = get_field('rang') ? get_field('rang') : 'Non classé'; // Vérifier le rang, sinon afficher "Non classé"
-                $victoires = get_field('nombre_victoires') ? get_field('nombre_victoires') : 0; // Récupérer les victoires ou 0
-                $defaites = get_field('nombre_defaites') ? get_field('nombre_defaites') : 0; // Récupérer les défaites ou 0
-
-                // Récupérer les coéquipiers
                 $coequipiers = array();
                 $coequipier_images = array(); // Pour stocker les images des coéquipiers
+
+                // Récupérer les coéquipiers
                 for ($i = 1; $i <= 4; $i++) {
                     $coequipier_id = get_field("coequipier$i"); // Récupérer l'ID du coéquipier
                     if ($coequipier_id) {
@@ -38,6 +33,15 @@ get_header(); ?>
                         $coequipier_images[] = $coequipier_avatar; // Ajouter l'URL de l'avatar à la liste
                     }
                 }
+                
+                // Sélectionner le premier coéquipier comme chef d'équipe
+                $chef_equipe_name = !empty($coequipiers) ? esc_html($coequipiers[0]) : 'Pas de coéquipier'; // Prendre le premier coéquipier comme chef
+
+                // Récupérer le rang, les victoires et les défaites
+                $rang = get_field('rang') ? get_field('rang') : 'Non classé'; // Vérifier le rang
+                $victoires = get_field('nombre_victoires') ? get_field('nombre_victoires') : 0; // Récupérer les victoires
+                $defaites = get_field('nombre_defaites') ? get_field('nombre_defaites') : 0; // Récupérer les défaites
+
                 ?>
                 <li>
                     <div class="team-card">
@@ -50,7 +54,6 @@ get_header(); ?>
                         <p>Chef d'équipe : <strong><?php echo esc_html($chef_equipe_name); ?></strong> <span class="crown-icon">👑</span></p>
                         <p>Coéquipiers : 
                             <?php 
-                            // Afficher les images et prénoms des coéquipiers
                             foreach ($coequipiers as $index => $coequipier) {
                                 echo '<img src="' . esc_url($coequipier_images[$index]) . '" alt="' . esc_attr($coequipier) . '" class="coequipier-avatar" /> ';
                                 echo esc_html($coequipier) . ' '; // Afficher le prénom du coéquipier

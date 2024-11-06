@@ -1282,3 +1282,74 @@ input[type="submit"]:hover {
 ul li {
     text-decoration: none; /* Pas de soulignement */
 }
+
+
+
+
+
+
+
+
+
+/* Mentions légales */
+.legal-notice {
+    max-width: 800px; /* Largeur maximale de la boîte de contenu */
+    margin: 0 auto; /* Centrer le conteneur */
+    padding: 20px; /* Espacement intérieur */
+    background-color: #0F1923; /* Couleur de fond sombre */
+    color: #FFFFFF; /* Couleur du texte */
+    border-radius: 10px; /* Coins arrondis */
+}
+
+.legal-notice h1 {
+    text-align: center; /* Centrer le titre */
+    margin-bottom: 20px; /* Espacement sous le titre */
+}
+
+.legal-notice h2 {
+    margin-top: 20px; /* Espacement au-dessus des sous-titres */
+    color: #FF4655; /* Couleur des sous-titres */
+}
+
+.legal-notice p {
+    line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
+    margin-bottom: 15px; /* Espacement entre les paragraphes */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Cgu */
+.cgu-page {
+    max-width: 800px; /* Largeur maximale de la boîte de contenu */
+    margin: 0 auto; /* Centrer le conteneur */
+    padding: 20px; /* Espacement intérieur */
+    background-color: #0F1923; /* Couleur de fond sombre */
+    color: #FFFFFF; /* Couleur du texte */
+    border-radius: 10px; /* Coins arrondis */
+}
+
+.cgu-page h1 {
+    text-align: center; /* Centrer le titre */
+    margin-bottom: 20px; /* Espacement sous le titre */
+}
+
+.cgu-page h2 {
+    margin-top: 20px; /* Espacement au-dessus des sous-titres */
+    color: #FF4655; /* Couleur des sous-titres */
+}
+
+.cgu-page p {
+    line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
+    margin-bottom: 15px; /* Espacement entre les paragraphes */
+}
