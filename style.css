@@ -7,11 +7,26 @@ Description: Le thème développé pour la SAé 301
 Version: 1.0
 */
 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Utilise le box model standard */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Utiliser Montserrat comme police principale */
+    background-color: #1F2326; /* Couleur de fond sombre */
+    color: #FFFFFF; /* Couleur de texte blanche */
+    padding: 20px; /* Espacement autour du contenu */
+}
+
+/* header */
 .menu-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333; /* Couleur de fond de la header */
+    background-color: #1F2326; /* Couleur de fond de la header */
     padding: 10px 20px;
 }
 
@@ -27,27 +42,31 @@ Version: 1.0
 
 /* Styles de la barre de navigation */
 .nav-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #333; /* Couleur de fond */
-    padding: 10px 20px;
+    display: none; /* Masqué par défaut sur mobile */
 }
 
-.nav-menu {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+/* Afficher la barre de navigation sur les écrans plus larges */
+@media (min-width: 768px) {
+    .nav-bar {
+        display: flex; /* Afficher la barre de navigation sur desktop */
+        align-items: center;
+        justify-content: space-between;
+        background-color: #1F2326; /* Couleur de fond */
+        padding: 10px 20px;
+    }
+    .hamburger {
+        display: block; /* Masquer le hamburger sur desktop */
+    }
 }
 
-.nav-menu li {
-    display: inline; /* Affiche les éléments en ligne */
-    margin-right: 20px; /* Espacement entre les éléments */
-}
-
-.nav-menu a {
-    color: #fff; /* Couleur des liens */
-    text-decoration: none; /* Pas de soulignement */
+/* Afficher le menu hamburger uniquement sur mobile */
+@media (max-width: 767px) {
+    .hamburger {
+        display: block; /* Afficher le hamburger sur mobile */
+    }
+    .nav-bar.hidden {
+        display: none; /* Masquer la barre de navigation si active */
+    }
 }
 
 /* Styles pour l'overlay du menu */
@@ -58,7 +77,7 @@ Version: 1.0
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+    background-color: #1F2326; /* Fond semi-transparent */
     z-index: 999;
 }
 
@@ -72,26 +91,1064 @@ Version: 1.0
     color: white;
 }
 
-.close-btn {
-    font-size: 40px;
-    color: #fff;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 30px;
+.profile-pic-container {
+    margin-right: 15px; /* Espace entre la photo de profil et le logo */
 }
 
-/* Styles pour afficher le menu */
+.profile-pic {
+    width: 40px; /* Ajustez la taille selon vos préférences */
+    height: 40px; /* Ajustez la taille selon vos préférences */
+    border-radius: 50%; /* Rendre l'image ronde */
+    border: 2px solid #FF4655; /* Bordure colorée si nécessaire */
+    cursor: pointer; /* Curseur pointer pour indiquer que c'est cliquable */
+}
+
+/* Styles généraux pour le menu overlay */
+.menu-overlay {
+    display: none; /* Masqué par défaut */
+    position: fixed; /* Fixé à l'écran */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1F2326; /* Fond noir avec une opacité pour le menu */
+    z-index: 1000; /* Au-dessus de tout */
+    overflow: hidden; /* Pour éviter le défilement */
+    transition: opacity 0.3s ease; /* Transition pour l'apparition */
+}
+
+/* Afficher le menu overlay lorsqu'il a la classe 'show' */
 .menu-overlay.show {
-    display: block; /* Affiche le menu lorsque la classe 'show' est ajoutée */
+    display: block; /* Affiche le menu */
 }
 
-/* Styles pour les appareils mobiles */
+/* Styles pour les sections du menu */
+.footer-section {
+    margin: 20px 0; /* Espace entre les sections */
+}
+
+/* Styles pour les liens du menu */
+.nav-menu {
+    list-style: none; /* Pas de puces */
+    padding: 0; /* Pas de padding */
+    margin: 0; /* Pas de marge */
+}
+
+.nav-menu li {
+    margin: 15px 0; /* Espacement entre les éléments */
+}
+
+.nav-menu a {
+    text-decoration: none; /* Pas de soulignement */
+    font-size: 24px; /* Taille de police */
+    color: #FFFFFF; /* Couleur du texte */
+    font-weight: bold; /* Texte en gras */
+    transition: color 0.3s; /* Transition pour le changement de couleur */
+}
+
+/* Changement de couleur au survol */
+.nav-menu a:hover {
+    color: #FF4655; /* Couleur rouge lors du survol */
+}
+
+/* Logo en bas */
+.menu-content .logo {
+    margin-top: 20px; /* Espace au-dessus du logo */
+}
+
+/* Styles pour le bouton de fermeture */
+.close-btn {
+    position: absolute; /* Position absolue pour placer le bouton */
+    top: -205px; /* Espace du haut - ajusté à 10px pour le rapprocher du haut */
+    right: -90px; /* Espace de la droite */
+    font-size: 60px; /* Taille du bouton de fermeture */
+    color: #FFFFFF; /* Couleur du texte */
+    cursor: pointer; /* Curseur main */
+}
+
+.nav-button {
+    background-color: #FF4655; /* Couleur de fond rouge */
+    color: #ffffff; /* Couleur du texte en blanc */
+    padding: 10px 20px; /* Espacement intérieur */
+    border: none; /* Pas de bordure */
+    border-radius: 15px 0 15px 0; /* Coins arrondis à gauche */
+    text-align: center; /* Alignement du texte au centre */
+    text-decoration: none; /* Pas de soulignement */
+    font-size: 18px; /* Taille de police */
+    font-weight: bold; /* Texte en gras */
+    cursor: pointer; /* Curseur en forme de main */
+    transition: background-color 0.3s, transform 0.3s; /* Effet de transition */
+    display: inline-block; /* Pour permettre un meilleur alignement */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de profondeur */
+}
+
+.nav-button:hover {
+    background-color: #e03a4c; /* Couleur de fond au survol */
+    transform: scale(1.05); /* Effet d'agrandissement au survol */
+}
+
+
+
+
+
+
+/* Button Index */
+.index-page {
+    text-align: center; /* Centrer le contenu de la page */
+}
+
+.image-container {
+    position: relative; /* Position relative pour le conteneur */
+    display: inline-block; /* Permet au conteneur de s'ajuster à l'image */
+}
+
+.home-image {
+    max-width: 100%; /* L'image prend toute la largeur du conteneur */
+    height: auto; /* Maintient le ratio d'aspect de l'image */
+    display: block; /* Assurez-vous que l'image est affichée comme un bloc */
+}
+
+.nav-button-home {
+    background-color: #FF4655; /* Couleur de fond rouge */
+    color: #ffffff; /* Couleur du texte en blanc */
+    padding: 10px 20px; /* Espacement intérieur */
+    border: none; /* Pas de bordure */
+    border-radius: 15px 0 15px 0; /* Coins arrondis à gauche */
+    text-align: center; /* Alignement du texte au centre */
+    text-decoration: none; /* Pas de soulignement */
+    font-size: 18px; /* Taille de police */
+    font-weight: bold; /* Texte en gras */
+    cursor: pointer; /* Curseur en forme de main */
+    transition: background-color 0.3s; /* Effet de transition pour la couleur de fond */
+    display: inline-block; /* Pour permettre un meilleur alignement */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de profondeur */
+    position: absolute; /* Positionnement absolu par rapport au conteneur */
+    bottom: 20px; /* Ajustez cette valeur pour placer le bouton à la hauteur souhaitée */
+    left: 50%; /* Centre le bouton horizontalement */
+    transform: translateX(-50%); /* Centre le bouton exactement */
+}
+
+.nav-button-home:hover {
+    background-color: #e03a4c; /* Couleur de fond au survol */
+    /* Ne pas appliquer de transformation ici pour éviter le mouvement */
+}
+
+
+
+
+
+
+
+
+
+.signup-button {
+    display: inline-block; /* S'assurer que le bouton s'affiche comme un élément en ligne */
+    padding: 10px 20px; /* Espacement intérieur */
+    background-color: #FF4655; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte */
+    text-decoration: none; /* Pas de soulignement */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s ease; /* Transition pour l'effet de survol */
+}
+
+.signup-button:hover {
+    background-color: #e03e50; /* Couleur de fond lors du survol */
+}
+
+.user-menu a {
+    font-family: 'Montserrat', sans-serif; /* Utiliser Montserrat ou la police que vous préférez */
+    color: #FFFFFF; /* Couleur du texte */
+    text-decoration: none; /* Pas de soulignement */
+    padding: 10px; /* Espacement intérieur si nécessaire */
+    transition: color 0.3s; /* Transition douce pour le changement de couleur */
+}
+
+.user-menu a:hover {
+    color: #FF4655; /* Changer la couleur au survol */
+    text-decoration: underline; /* Souligner au survol */
+}
+
+/* CSS pour la page de connexion */
+.login-form-container {
+    max-width: 600px; /* Largeur maximale de la boîte de formulaire */
+    margin: 0 auto; /* Centrer le conteneur */
+    padding: 20px; /* Espacement intérieur */
+    background-color: #1F2326; /* Couleur de fond sombre */
+    color: #FFFFFF; /* Couleur du texte */
+    border-radius: 10px; /* Coins arrondis */
+}
+
+
+
+
+
+
+
+
+
+/* footer */
+/* footer */
+.site-footer {
+    background-color: #1F2326; /* Couleur de fond du footer */
+    color: #fff; /* Couleur du texte */
+    padding: 40px 20px; /* Espacement intérieur */
+    text-align: center; /* Centrer le texte */
+}
+
+.footer-container {
+    display: flex; /* Utiliser Flexbox pour une disposition flexible */
+    flex-wrap: wrap; /* Permet aux sections de passer à la ligne si l'espace est insuffisant */
+    justify-content: space-around; /* Espacement entre les sections */
+}
+
+.footer-section {
+    flex: 1; /* Chaque section prend une part égale de l'espace */
+    min-width: 200px; /* Largeur minimale pour les sections */
+    margin: 10px; /* Marges autour des sections */
+    padding: 10px; /* Espacement intérieur pour chaque section */
+}
+
+.footer-section h3 {
+    font-family: 'Orbitron', sans-serif; /* Utiliser Orbitron pour les titres */
+    margin-bottom: 15px; /* Espacement en dessous des titres */
+    color: #FF4655; /* Couleur des titres */
+}
+
+.footer-section ul {
+    list-style-type: none; /* Pas de puces */
+    padding: 0; /* Pas de padding */
+    margin: 0; /* Pas de marge */
+}
+
+.footer-section ul li {
+    margin-bottom: 10px; /* Espacement entre les items de la liste */
+}
+
+.footer-section a {
+    color: #fff; /* Couleur des liens */
+    text-decoration: none; /* Pas de soulignement */
+    transition: color 0.3s; /* Transition douce pour le changement de couleur */
+}
+
+.footer-section a:hover {
+    color: #FF4655; /* Changement de couleur au survol */
+}
+
+.footer-bottom {
+    text-align: center; /* Centrer le texte du bas du footer */
+    margin-top: 20px; /* Espacement au-dessus du texte */
+    font-size: 14px; /* Taille de police pour le texte bas */
+}
+
+.footer-bottom p {
+    margin: 5px 0; /* Espacement vertical pour les paragraphes */
+}
+
+/* Médias Queries pour Responsive */
 @media (max-width: 768px) {
-    .nav-bar {
-        display: none; /* Cache la nav-bar sur mobile */
+    .footer-container {
+        flex-direction: column; /* Passer à une colonne sur les petits écrans */
+        align-items: center; /* Centrer les sections */
     }
-    .hamburger {
-        display: block; /* Affiche le hamburger sur mobile */
+
+    .footer-section {
+        min-width: 100%; /* Les sections prennent toute la largeur sur mobile */
+        margin: 10px 0; /* Espacement vertical entre les sections */
+        text-align: center; /* Centrer le texte des sections */
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FAQ */
+.faq-page {
+    background-color: #0F1923; /* Couleur de fond de la page */
+    color: #FFFFFF; /* Couleur du texte */
+    padding: 20px; /* Espacement autour du contenu */
+    border-radius: 8px; /* Coins arrondis */
+}
+
+h1 {
+    font-size: 36px; /* Taille du titre principal */
+    margin-bottom: 10px; /* Espacement en bas du titre */
+}
+
+h2 {
+    font-size: 24px; /* Taille du sous-titre */
+    margin-bottom: 20px; /* Espacement en bas du sous-titre */
+}
+
+.faq-item {
+    background-color: #2C3237; /* Couleur de fond des éléments FAQ */
+    margin: 15px 0; /* Espacement entre les éléments FAQ */
+    padding: 15px; /* Espacement à l'intérieur des éléments FAQ */
+    border-radius: 8px; /* Coins arrondis */
+}
+
+h3 {
+    font-size: 20px; /* Taille des numéros de question */; 
+}
+
+h4 {
+    font-size: 18px; /* Taille des questions */
+    margin-bottom: 10px; /* Espacement en bas des questions */
+}
+
+p {
+    font-size: 16px; /* Taille des réponses */
+}
+
+@media (max-width: 768px) {
+    .faq-page {
+        padding: 10px; /* Moins d'espacement sur mobile */
+    }
+
+    h1 {
+        font-size: 28px; /* Taille du titre principal sur mobile */
+    }
+
+    h2 {
+        font-size: 20px; /* Taille du sous-titre sur mobile */
+    }
+
+    h3 {
+        font-size: 18px; /* Taille des numéros de question sur mobile */
+    }
+
+    h4 {
+        font-size: 16px; /* Taille des questions sur mobile */
+    }
+    
+
+    p {
+        font-size: 14px; /* Taille des réponses sur mobile */
+    }
+}
+
+
+
+
+/* Politique de Confidentialité */
+.privacy-policy {
+    background-color: #0F1923; /* Couleur de fond */
+    color: #FFFFFF; /* Couleur du texte */
+    padding: 20px; /* Espacement autour du contenu */
+    border-radius: 8px; /* Coins arrondis */
+}
+
+h1 {
+    font-size: 36px; /* Taille du titre principal */
+    margin-bottom: 10px; /* Espacement en bas du titre */
+}
+
+h2 {
+    font-size: 24px; /* Taille des sous-titres */
+    margin-bottom: 20px; /* Espacement en bas des sous-titres */
+}
+
+ul {
+    margin-left: 20px; /* Espacement à gauche pour les listes */
+}
+
+li {
+    margin-bottom: 10px; /* Espacement entre les éléments de la liste */
+}
+
+@media (max-width: 768px) {
+    .privacy-policy {
+        padding: 10px; /* Moins d'espacement sur mobile */
+    }
+
+    h1 {
+        font-size: 28px; /* Taille du titre principal sur mobile */
+    }
+
+    h2 {
+        font-size: 20px; /* Taille des sous-titres sur mobile */
+    }
+
+    li {
+        font-size: 14px; /* Taille des éléments de la liste sur mobile */
+    }
+}
+
+
+
+
+
+
+/* Tournoi */
+.tournament-page {
+    background-color: #ECE8E1; /* Couleur de fond */
+    color: #000000; /* Couleur du texte */
+    padding: 20px; /* Espacement autour du contenu */
+}
+
+.tournament-header {
+    text-align: center; /* Centrer le texte */
+    margin-bottom: 20px; /* Espacement en bas */
+}
+
+.tournament-header img {
+    max-width: 100%; /* Rendre l'image responsive */
+    height: auto; /* Ajuster la hauteur automatiquement */
+    border-radius: 8px; /* Arrondir les coins de l'image */
+}
+
+.tournament-header h1 {
+    font-size: 28px; /* Taille du titre */
+    margin: 20px 0; /* Espacement autour du titre */
+}
+
+.tournament-header p {
+    font-size: 16px; /* Taille du texte normal */
+    line-height: 1.6; /* Hauteur de ligne pour plus de lisibilité */
+}
+
+
+.registration-conditions {
+    margin-top: 30px; /* Espacement au-dessus de la section d'inscription */
+}
+
+.registration-conditions h2 {
+    font-size: 24px; /* Taille des titres de section */
+    margin-bottom: 10px; /* Espacement en bas */
+}
+
+.registration-conditions h3 {
+    font-size: 20px; /* Taille des sous-titres */
+    margin-top: 20px; /* Espacement au-dessus */
+    margin-bottom: 10px; /* Espacement en bas */
+}
+
+.registration-conditions ul, .registration-conditions ol {
+    padding-left: 20px; /* Espacement à gauche pour les listes */
+    margin-bottom: 20px; /* Espacement en bas des listes */
+}
+
+.registration-conditions li {
+    margin-bottom: 10px; /* Espacement entre les éléments de la liste */
+}
+
+@media (max-width: 768px) {
+    .tournament-header h1 {
+        font-size: 24px; /* Taille du titre sur mobile */
+    }
+
+    .tournament-header p {
+        font-size: 14px; /* Taille du texte sur mobile */
+    }
+
+    .button {
+        font-size: 16px; /* Taille du texte du bouton sur mobile */
+        padding: 10px 20px; /* Espacement intérieur du bouton sur mobile */
+    }
+
+    .registration-conditions h2 {
+        font-size: 22px; /* Taille des titres de section sur mobile */
+    }
+
+    .registration-conditions h3 {
+        font-size: 18px; /* Taille des sous-titres sur mobile */
+    }
+
+    .registration-conditions li {
+        font-size: 14px; /* Taille du texte des listes sur mobile */
+    }
+}
+
+
+
+
+
+
+/* Inscription */
+
+.registration-form-container {
+    max-width: 400px; /* Largeur maximale du formulaire */
+    margin: 0 auto; /* Centrer le formulaire */
+    padding: 20px; /* Espacement intérieur */
+    border-radius: 10px; /* Coins arrondis */
+    background-color: #2D3338; /* Couleur de fond des sections */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre pour un effet de profondeur */
+}
+
+.registration-form-container h2 {
+    font-family: 'Orbitron', sans-serif; /* Utiliser Orbitron pour le titre de l'inscription */
+    font-size: 28px; /* Taille de la police pour le titre */
+    margin-bottom: 10px; /* Espacement sous le titre */
+    color: #FF4655; /* Couleur du titre */
+    text-align: center; /* Centrer le titre */
+}
+
+.registration-form-container p {
+    font-size: 16px; /* Taille de la police pour le texte */
+    margin-bottom: 20px; /* Espacement sous le texte */
+    text-align: center; /* Centrer le texte */
+}
+
+.registration-form-container input[type="text"],
+.registration-form-container input[type="email"],
+.registration-form-container input[type="password"] {
+    width: 100%; /* Prendre toute la largeur */
+    padding: 10px; /* Espacement intérieur */
+    margin-bottom: 15px; /* Espacement entre les champs */
+    border: 1px solid #CCCCCC; /* Bordure grise */
+    border-radius: 5px; /* Coins arrondis */
+    background-color: #FFFFFF; /* Fond blanc pour les champs */
+    color: #000; /* Couleur du texte */
+    font-size: 16px; /* Taille de police */
+}
+
+/* Style du bouton d'inscription */
+.registration-form-container input[type="submit"] {
+    background-color: #FF4655; /* Couleur de fond du bouton */
+    color: #FFFFFF; /* Couleur du texte du bouton */
+    padding: 10px; /* Espacement intérieur */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur de main sur hover */
+    font-size: 18px; /* Taille de police */
+    transition: background-color 0.3s; /* Transition pour l'effet hover */
+    width: 100%; /* Prendre toute la largeur */
+}
+
+.registration-form-container input[type="submit"]:hover {
+    background-color: #e03a4c; /* Couleur au survol */
+}
+
+/* Style des liens */
+.registration-form-container a {
+    color: #FF4655; /* Couleur des liens */
+    text-decoration: none; /* Pas de soulignement */
+}
+
+.registration-form-container a:hover {
+    text-decoration: underline; /* Souligner au survol */
+}
+
+/* Style de la case à cocher */
+.registration-form-container label {
+    display: flex; /* Utiliser Flexbox pour aligner la case à cocher */
+    align-items: center; /* Centrer verticalement */
+    margin-bottom: 20px; /* Espacement sous le label */
+}
+
+.registration-form-container input[type="checkbox"] {
+    margin-right: 10px; /* Espacement à droite de la case à cocher */
+}
+
+
+
+
+
+
+
+
+
+/* Conact */
+.contact-page {
+    max-width: 400px; /* Largeur maximale de la boîte de formulaire */
+    margin: 0 auto; /* Centrer le conteneur */
+    padding: 20px; /* Espacement intérieur */
+    border-radius: 10px; /* Coins arrondis */
+    background-color: #2D3338; /* Couleur de fond des sections */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre pour un effet de profondeur */
+    color: #FFFFFF; /* Couleur du texte */
+}
+
+.contact-page h1 {
+    font-family: 'Orbitron', sans-serif; /* Utiliser Orbitron pour le titre */
+    font-size: 28px; /* Taille de la police pour le titre */
+    margin-bottom: 10px; /* Espacement sous le titre */
+    color: #FF4655; /* Couleur du titre */
+    text-align: center; /* Centrer le titre */
+}
+
+.contact-page p {
+    font-size: 16px; /* Taille de la police pour le texte */
+    margin-bottom: 20px; /* Espacement sous le texte */
+    text-align: center; /* Centrer le texte */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%; /* Prendre toute la largeur */
+    padding: 10px; /* Espacement intérieur */
+    margin-bottom: 15px; /* Espacement entre les champs */
+    border: 1px solid #CCCCCC; /* Bordure grise */
+    border-radius: 5px; /* Coins arrondis */
+    background-color: #FFFFFF; /* Fond blanc pour les champs */
+    color: #000; /* Couleur du texte */
+    font-size: 16px; /* Taille de police */
+}
+
+.contact-form button {
+    background-color: #FF4655; /* Couleur de fond du bouton */
+    color: #FFFFFF; /* Couleur du texte du bouton */
+    padding: 10px; /* Espacement intérieur */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur de main sur hover */
+    font-size: 18px; /* Taille de police */
+    transition: background-color 0.3s; /* Transition pour l'effet hover */
+    width: 100%; /* Prendre toute la largeur */
+}
+
+.contact-form button:hover {
+    background-color: #e03a4c; /* Couleur au survol */
+}
+
+/* Style des liens */
+.contact-page a {
+    color: #FF4655; /* Couleur des liens */
+    text-decoration: none; /* Pas de soulignement */
+}
+
+.contact-page a:hover {
+    text-decoration: underline; /* Souligner au survol */
+}
+
+
+
+
+
+/* Archive Teams */
+.team-archive {
+    max-width: 800px; /* Largeur maximale de la boîte de contenu */
+    margin: 0 auto; /* Centrer le conteneur */
+    padding: 20px; /* Espacement intérieur */
+    background-color: #0F1923; /* Couleur de fond sombre */
+    color: #FFFFFF; /* Couleur du texte */
+    border-radius: 10px; /* Coins arrondis */
+}
+
+.team-archive h1 {
+    text-align: center; /* Centrer le titre */
+    margin-bottom: 20px; /* Espacement sous le titre */
+}
+
+.team-archive ul {
+    list-style-type: none; /* Pas de puces */
+    padding: 0; /* Pas de remplissage */
+}
+
+.team-archive li {
+    margin-bottom: 20px; /* Espacement entre les équipes */
+}
+
+.team-card {
+    background-color: #2B2F33; /* Couleur de fond des cartes d'équipe */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 15px; /* Espacement intérieur */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de profondeur */
+}
+
+.team-logo {
+    max-width: 100px; /* Taille maximum du logo */
+    margin-bottom: 10px; /* Espacement sous le logo */
+}
+
+.view-details {
+    display: inline-block; /* Afficher comme un bloc */
+    margin-top: 10px; /* Espacement au-dessus du bouton */
+    background-color: #FF4655; /* Couleur du bouton */
+    color: #FFFFFF; /* Couleur du texte */
+    padding: 10px 15px; /* Espacement intérieur du bouton */
+    border-radius: 5px; /* Coins arrondis */
+    text-decoration: none; /* Pas de soulignement */
+}
+
+.view-details:hover {
+    background-color: #e03a4c; /* Couleur du bouton au survol */
+}
+
+.coequipier-avatar {
+    width: 30px; /* Largeur de l'avatar */
+    height: 30px; /* Hauteur de l'avatar */
+    border-radius: 50%; /* Rendre l'image circulaire */
+    margin-right: 5px; /* Espace entre l'image et le prénom */
+    vertical-align: middle; /* Aligne les images verticalement avec le texte */
+}
+
+
+
+
+
+
+
+
+/* Single Equipe */
+body {
+    font-family: 'Montserrat', sans-serif; /* Utiliser Montserrat comme police principale */
+    background-color: #1F2326; /* Couleur de fond sombre */
+    color: #FFFFFF; /* Couleur de texte blanche */
+    margin: 0; /* Supprimer les marges par défaut */
+    padding: 20px; /* Espacement autour du contenu */
+}
+
+.profile-page {
+    max-width: 800px; /* Limiter la largeur du profil */
+    margin: 0 auto; /* Centrer le contenu */
+    padding: 20px; /* Espacement intérieur */
+    border-radius: 10px; /* Coins arrondis */
+    background-color: #2D3338; /* Couleur de fond des sections */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre pour un effet de profondeur */
+}
+
+.profile-header {
+    display: flex; /* Utiliser flexbox pour l'alignement */
+    align-items: center; /* Centrer verticalement */
+    margin-bottom: 20px; /* Espacement entre le header et le contenu */
+}
+
+.profile-picture {
+    margin-right: 20px; /* Espacement à droite de l'image de profil */
+}
+
+.profile-picture img {
+    width: 80px; /* Taille de l'image de profil */
+    height: 80px;
+    border-radius: 50%; /* Rendre l'image ronde */
+    border: 2px solid #FF4655; /* Bordure pour faire ressortir l'image */
+}
+
+.profile-info {
+    flex-grow: 1; /* Prendre tout l'espace restant */
+}
+
+.profile-info h2 {
+    font-family: 'Orbitron', sans-serif; /* Utiliser Orbitron pour le titre de l'équipe */
+    font-size: 24px; /* Taille de la police pour le titre */
+    margin: 0; /* Pas de marge par défaut */
+    color: #FF4655; /* Couleur de titre */
+}
+
+.profile-info h3 {
+    font-size: 20px; /* Taille de la police pour le nom d'utilisateur */
+    margin: 5px 0; /* Espacement vertical */
+    color: #CCCCCC; /* Couleur du nom d'utilisateur */
+}
+
+.team-members {
+    margin-top: 20px; /* Espacement au-dessus de la section des coéquipiers */
+}
+
+.team-members h3 {
+    font-size: 20px; /* Taille de la police pour le titre des coéquipiers */
+    color: #FF4655; /* Couleur du titre */
+}
+
+.team-members ul {
+    list-style: none; /* Supprimer les puces */
+    padding: 0; /* Supprimer le padding par défaut */
+}
+
+.team-members li {
+    display: flex; /* Utiliser flexbox pour les coéquipiers */
+    align-items: center; /* Centrer verticalement */
+    margin-bottom: 10px; /* Espacement entre les coéquipiers */
+}
+
+.team-members li img {
+    width: 40px; /* Taille de l'image de profil du coéquipier */
+    height: 40px;
+    border-radius: 50%; /* Rendre l'image ronde */
+    margin-right: 10px; /* Espacement à droite de l'image */
+}
+
+.statistics {
+    margin-top: 20px; /* Espacement au-dessus de la section statistiques */
+    background-color: #2D3338; /* Couleur de fond des statistiques */
+    padding: 15px; /* Espacement intérieur */
+    border-radius: 5px; /* Coins arrondis */
+}
+
+.statistics h3 {
+    font-size: 20px; /* Taille de la police pour le titre des statistiques */
+    color: #FF4655; /* Couleur du titre */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Nouveautés */
+/* Nouveautés */
+.articles-archive {
+    padding: 20px;
+    background-color: #0F1923; /* Couleur de fond */
+}
+
+.articles-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet de passer à la ligne suivante */
+    gap: 20px; /* Espacement entre les cartes */
+    justify-content: center; /* Centre les cartes */
+}
+
+.article-card {
+    background-color: #fff; /* Couleur de fond de la carte */
+    border: 1px solid #ddd; /* Bordure de la carte */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de profondeur */
+    width: 300px; /* Largeur fixe pour les cartes */
+    overflow: hidden; /* Cache les débordements */
+    transition: transform 0.2s; /* Effet de transition pour l'agrandissement */
+}
+
+.article-card:hover {   
+    transform: scale(1.05); /* Effet d'agrandissement au survol */
+}
+
+.card-image img {
+    width: 100%; /* L'image prend toute la largeur de la carte */
+    height: auto; /* La hauteur est automatique pour garder le ratio */
+}
+
+.article-title {
+    font-size: 20px;
+    margin: 15px; /* Marge autour du titre */
+}
+
+.article-date {
+    font-size: 16px;
+    color: #666; /* Couleur gris pour la date */
+    margin: 0 15px; /* Marge autour de la date */
+}
+
+.article-excerpt {
+    font-size: 16px;
+    margin: 0 15px 15px; /* Marge autour de l'extrait */
+}
+
+/* Styles pour le filtre */
+.filter-options {
+    margin-bottom: 20px; /* Espacement sous le filtre */
+    display: flex; /* Utiliser flexbox pour aligner les éléments */
+    align-items: center; /* Centrer verticalement */
+}
+
+.filter-options label {
+    margin-right: 10px; /* Espacement à droite du label */
+    font-size: 16px; /* Taille de police pour le label */
+    color: #333; /* Couleur du texte */
+}
+
+.filter-options select {
+    padding: 10px; /* Espacement intérieur du select */
+    border: 1px solid #ccc; /* Bordure du select */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 16px; /* Taille de police pour le select */
+    color: #333; /* Couleur du texte */
+    cursor: pointer; /* Curseur de main sur hover */
+    background-color: #fff; /* Couleur de fond */
+    margin-right: 10px; /* Espacement à droite du select */
+}
+
+.filter-options button {
+    padding: 10px 15px; /* Espacement intérieur du bouton */
+    background-color: #FF4655; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 16px; /* Taille de police pour le bouton */
+    cursor: pointer; /* Curseur de main sur hover */
+    transition: background-color 0.3s; /* Transition pour le survol */
+}
+
+.filter-options button:hover {
+    background-color: #e03a4c; /* Couleur de fond au survol */
+}
+
+
+
+
+
+
+/* Typo */
+body {
+    font-family: 'Inter', sans-serif; /* Utilise Inter comme police principale */
+}
+
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif; /* Utilise Orbitron pour les titres */
+}
+
+h1 {
+    font-weight: 600; /* Utiliser Orbitron Semibold */
+}
+
+h2, h3 {
+    font-weight: 400; /* Utiliser Orbitron Regular par défaut */
+}
+
+p, .button {
+    font-family: 'Montserrat', sans-serif; /* Utilise Montserrat pour les paragraphes et les boutons */
+    font-weight: 400; /* Montserrat Regular */
+}
+
+.button {
+    font-weight: 600; /* Montserrat SemiBold pour les boutons */
+}
+
+
+
+
+/* profil */
+.profile-page {
+    text-align: center; /* Centrer le contenu de la page */
+    background-color: #1F2326; /* Couleur de fond de la page */
+    color: #fff; /* Couleur du texte */
+    padding: 20px; /* Espacement intérieur */
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre le contenu horizontalement */
+}
+
+.profile-picture img {
+    width: 100px; /* Taille de l'image du profil */
+    height: 100px; /* Taille de l'image du profil */
+    border-radius: 50%; /* Rendre l'image ronde */
+    border: 2px solid #FF4655; /* Bordure colorée */
+}
+
+.profile-info h2 {
+    font-size: 24px; /* Taille du pseudo */
+    margin-top: 10px; /* Espace au-dessus du pseudo */
+}
+
+.profile-info p {
+    margin-top: 5px; /* Espace au-dessus de la date de création */
+    font-size: 16px; /* Taille de la date */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Creation equipe */
+.create-team-form {
+    background-color: #1F2326; /* Fond sombre */
+    color: #ffffff; /* Texte blanc */
+    padding: 20px; /* Espacement intérieur */
+    border-radius: 5px; /* Coins arrondis */
+    max-width: 100%; /* Largeur maximale pour les petits écrans */
+    margin: 20px auto; /* Centrer le formulaire */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de profondeur */
+}
+
+.create-team-form h2 {
+    margin-bottom: 20px; /* Espacement sous le titre */
+    text-align: center; /* Centrer le titre */
+}
+
+.create-team-form label {
+    display: block; /* Afficher les labels comme bloc */
+    margin-bottom: 5px; /* Espacement sous les labels */
+}
+
+.create-team-form input[type="text"],
+.create-team-form input[type="file"],
+.create-team-form select {
+    width: 100%; /* Prendre toute la largeur */
+    padding: 10px; /* Espacement intérieur */
+    margin-bottom: 15px; /* Espacement sous les champs */
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 5px; /* Coins arrondis */
+}
+
+.create-team-form input[type="submit"] {
+    background-color: #FF4655; /* Couleur du bouton */
+    color: #ffffff; /* Couleur du texte du bouton */
+    padding: 10px; /* Espacement intérieur */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur main */
+    transition: background-color 0.3s; /* Transition pour l'effet de survol */
+}
+
+.create-team-form input[type="submit"]:hover {
+    background-color: #e03a4c; /* Couleur au survol */
+}
+
+/* Styles pour la liste des coéquipiers */
+.coequipiers-list {
+    margin-bottom: 15px; /* Espacement sous la liste */
+}
+
+.coequipiers-list label {
+    display: block; /* Afficher les labels comme bloc */
+    margin-bottom: 5px; /* Espacement sous les labels */
+}
+
+/* Styles pour les messages d'invitation */
+.create-team-form p {
+    text-align: center; /* Centrer les messages */
+    margin-top: 20px; /* Espacement au-dessus des messages */
+}
+
+
+
+
+
+
+
+
+/* Prochain match */
+.matchs-container {
+    padding: 20px;
+}
+
+.upcoming-matches-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.match-card {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #1F2326; /* Arrière-plan sombre */
+    color: white; /* Couleur du texte */
+}
+
+.team-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.vs {
+    margin: 0 10px; /* Espacement autour du "vs" */
+    font-weight: bold;
 }

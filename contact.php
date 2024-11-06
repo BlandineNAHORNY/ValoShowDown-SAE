@@ -6,9 +6,9 @@ get_header();
 <div class="contact-page">
     <h1>Contact</h1>
     <p>Une question, besoin d’aide ? Contactez notre équipe du tournoi ValoShowdown !</p>
-    <p>Consultez notre <a href="<?php echo esc_url(home_url('/faq')); ?>">FAQ</a> pour trouver des réponses aux questions fréquentes</p>
+    <p>Consultez notre <a href="<?php echo esc_url(home_url('/faq')); ?>">FAQ</a> pour trouver des réponses aux questions fréquentes.</p>
 
-    <form method="POST" action="">
+    <form method="POST" action="" class="contact-form">
         <input type="text" name="nom" placeholder="Nom" required>
         <input type="text" name="prenom" placeholder="Prénom" required>
         <input type="email" name="email" placeholder="Email" required>

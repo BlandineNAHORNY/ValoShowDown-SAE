@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 }
 ?>
 
-<div class="login-form-container">
+<div class="registration-form-container">
     <h2>Connexion</h2>
     <p>Connectez-vous pour accéder à votre espace joueur</p>
     <form method="POST">

@@ -8,17 +8,21 @@
         <!-- Afficher l'image de l'article -->
         <div class="article-image">
             <?php 
-            $image_article = get_field('image_article'); // Récupérer l'image de l'article
-            if ($image_article) : ?>
-                <img src="<?php echo esc_url($image_article); ?>" alt="<?php the_title(); ?>" />
+            $image_id = get_field('image_article'); // Récupérer l'ID de l'image
+            if ($image_id) : 
+                $image_url = wp_get_attachment_url($image_id); // Obtenir l'URL à partir de l'ID
+            ?>
+                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr(get_post_meta($image_id, '_wp_attachment_image_alt', true)); ?>" />
+            <?php else : ?>
+                <p>Aucune image disponible.</p> <!-- Message si aucune image n'est trouvée -->
             <?php endif; ?>
         </div>
 
-        <!-- Titre de l'article -->
-        <h1 class="article-title"><?php the_title(); ?></h1>
-
         <!-- Date de publication -->
         <p class="publication-date">Publié le : <?php echo get_field('date_publication'); ?></p>
+
+        <!-- Titre de l'article -->
+        <h1 class="article-title"><?php the_title(); ?></h1>
 
         <!-- Contenu de l'article -->
         <div class="article-content">
@@ -46,6 +50,7 @@
                 ?>
             </div>
         </div>
+
 
     <?php endwhile; else : ?>
         <p>Aucun article trouvé.</p>

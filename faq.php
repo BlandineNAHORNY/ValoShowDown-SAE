@@ -68,7 +68,7 @@ get_header();
     <div class="faq-item">
         <h3>10</h3>
         <h4>Que faire en cas de problème technique durant le tournoi ?</h4>
-        <p>Le cashprize total est de 1500€, qui sera réparti entre les équipes gagnantes.</p>
+        <p>Contactez notre équipe via notre page Contact, nous ferons de notre mieux pour vous aider.</p>
     </div>
 
     <div class="faq-item">

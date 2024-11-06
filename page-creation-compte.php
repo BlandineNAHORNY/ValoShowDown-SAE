@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
         
         <label>
             <input type="checkbox" name="conditions" required>
-            J'accepte les <a href="#">conditions générales d'utilisation</a> et la <a href="#">politique de confidentialité</a>.
+            J'accepte les <a href="#">conditions générales d'utilisation</a> et la <a href="/politique-de-confidentialite">politique de confidentialité</a>.
         </label>
         
         <input type="submit" name="register" value="Je m'inscris">

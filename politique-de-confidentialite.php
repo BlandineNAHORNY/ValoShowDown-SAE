@@ -1,5 +1,8 @@
 <?php
-/* Template Name: Politique de Confidentialité */
+/*
+Template Name: Politique de Confidentialité
+*/
+
 get_header();
 ?>
 

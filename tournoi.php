@@ -25,7 +25,7 @@ get_header();
         <p>
             Rejoignez-nous pour un week-end de compétition et de divertissement. Montrez votre talent, emmenez votre équipe au sommet, et faites-vous un nom dans la communauté Valorant ! Pour participer, il vous suffit de vous inscrire via le bouton ci-dessous et de rassembler votre équipe.
         </p>
-        <a href="<?php echo site_url('/page-creation-compte'); ?>" class="button">Inscription</a>
+        <a href="<?php echo site_url('/inscription'); ?>" class="nav-button">Inscription</a>
     </div>
 
     <div class="registration-conditions">
